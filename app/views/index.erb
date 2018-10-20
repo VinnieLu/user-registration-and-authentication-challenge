@@ -1,0 +1,48 @@
+<h1>Please register:</h1><br>
+
+<form action="/register" method="post">
+Username:
+<input type="text" name="username"><br>
+Email:
+<input type="text" name="email"><br>
+Password:
+<input type="password" name="password"><br>
+<input type="submit">
+</form><br><br>
+
+<!-- <% if @entry %> -->
+<!-- User successfully registered. -->
+<!-- <% end %> -->
+
+<% if @error %>
+  <%= @error %>
+<% end %><br>
+
+<% if @other_error %>
+<%= @other_error %>
+<% end %><br>
+
+<% if session[:user_id] %>
+<%= "You are logged in." %>
+<% elsif !session[:user_id] %>
+<%= "You are logged out." %>
+<% end %><br>
+<form action=/logout method="post">
+<input type="submit" value="Logout">
+</form>
+<br>
+<form action='/secret' method='post'>
+<input type="submit" value="Secret Page">
+</form>
+<br>
+
+<h2>Or please login:</h2><br>
+<form action="/login" method="post">
+Username:
+<input type="text" name="username"><br>
+Password:
+<input type="password" name="password_hash"><br>
+<!-- Email:
+<input type="text" name="email"><br> -->
+<input type="submit">
+</form>

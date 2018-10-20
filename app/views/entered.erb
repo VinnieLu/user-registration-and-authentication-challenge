@@ -1,0 +1,11 @@
+You made it!
+<br><br>
+<% if session[:user_id] %>
+<%= "You are logged in." %>
+<% end %>
+
+<form action="/logout" method="post">
+<input type="submit" value="Logout">
+</form>
+<br><br>
+<a href='/'>Homepage</a>
